@@ -109,7 +109,12 @@ if(tnC) {
 // console.log(document.getElementsByClassName("valid-feedback"));
 
 if(!error){
-   resetFields();
+
+    setTimeout(() => {
+        resetFields();
+   document.getElementById("succes-alert").style.display = "none";
+        
+    }, 2000);
    
    var elements = document.getElementsByClassName('valid-feedback')
    
