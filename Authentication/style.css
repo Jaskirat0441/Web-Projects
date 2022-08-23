@@ -1,0 +1,16 @@
+.authentication-title {
+    background-color: #eee;
+}
+.reg_form{
+    width: 70vw;
+    background-image: linear-gradient(to right, #6dace3 , #a7d0f3);
+    padding: 6px 30px;
+    border-radius:14px;
+
+}
+.alert{
+    display: none;
+}
+label{
+    font-weight: 600;
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+    
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="#" class="nav-link px-2 text-white">Home</a></li>
+              </ul>
+    
+         
+            <div class="text-end">
+              <button type="button" class="btn btn-outline-light me-2"><a href="#" class="nav-link px-2 text-white">Login</a></button>
+              <button type="button" class="btn btn-warning"><a href="#sign_up_form" class="nav-link px-2 text-white">Sign-up</a></button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!--  -->
+      <div class="position-relative overflow-hidden  text-center authentication-title">
+        <div class="col-md-5 p-lg-5 mx-auto ">
+          <h1 class="display-4 fw-normal">Authentication Form</h1>
+          <p class="lead fw-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
+          <a class="btn btn-outline-secondary" href="#">Explore Now</a>
+        </div>
+        <div class="product-device shadow-sm d-none d-md-block"></div>
+        <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+      </div>
+      <!--  -->
+
+      <div class="container reg_form my-5" >
+        <h1 class="text-center">Sign Up</h1>
+        <div class="alert col-md-7 mt-4 alert-success text-center m-auto alert-dismissible my-2 fade show" role="alert" id="succes-alert">
+          <strong>Succes!  </strong>Your details have been saved successfully!
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+          <form class="row g-3 needs-validation my-5" id="sign_up_form" >
+              <div class="col-md-4">
+                <label for="validationCustom01" class="form-label">First name</label>
+                <input type="text" class="form-control" id="first-name" >
+                <div class="valid-feedback" id="valid-firstname">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback" id="invalid-firstname">
+                  Please enter a valid first name.
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label for="validationCustom02" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="last-name">
+                <div class="valid-feedback" id="valid-lastname">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback" id="invalid-lastname">
+                  Please enter a valid last name.
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label for="validationCustomUsername" class="form-label">Email</label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text" id="inputGroupPrepend">@</span>
+                  <input type="text" class="form-control" id="email" aria-describedby="inputGroupPrepend" >
+                  <div class="valid-feedback" id="valid-email">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback" id="invalid-email">
+                    Please enter a valid email.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phone">
+                <div class="invalid-feedback" id="invalid-phone">
+                  Please provide a valid Phone Number.
+                </div>
+                <div class="valid-feedback" id="valid-phone">
+                  Looks good!
+                </div>
+              </div>
+               <div class="col-md-4">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password">
+                <!-- <div class="invalid-feedback" id="invalid-password">
+                  Please provide a valid Password
+                </div> -->
+                <div class="valid-feedback" id="valid-password">
+                  Looks good!
+                </div>
+              </div> 
+              <div class="col-md-4">
+                <label for="confirm_pass" class="form-label">Confirm Password</label>
+                <input type="tel" class="form-control" id="confirm_pass">
+                <div class="invalid-feedback" id="invalid-confirm_pass">
+                  Please provide a valid confirm_pass Number.
+                </div>
+                <div class="valid-feedback" id="valid-confirm_pass">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="tnC" >
+                  <label class="form-check-label" for="tnC" id="tnc_success">
+                    Agree to terms and conditions
+                  </label>
+                <div class="invalid-feedback" id="invalid-tnC">
+                    You must agree before submitting.
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 text-center">
+                <button class="btn btn-success" type="button" onclick="validate()">Submit form</button>
+              </div>
+            </form>
+
+
+            <!--  login form  -->
+
+
+            <form class="row g-3 needs-validation my-5" id="login_form" >
+              <div class="col-md-4">
+                <label for="validationCustomUsername" class="form-label">Email</label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text" id="inputGroupPrepend">@</span>
+                  <input type="text" class="form-control" id="login-email" aria-describedby="inputGroupPrepend" >
+                  <div class="valid-feedback" id="valid-login-email">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback" id="invalid-login-email">
+                    Please enter a valid Email.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label for="login_pass" class="form-label">Password</label>
+                <input type="login_pass" class="form-control" id="login_pass">
+                <!-- <div class="invalid-feedback" id="invalid-login_pass">
+                  Please provide a valid login_pass
+                </div> -->
+                <div class="valid-feedback" id="valid-login_pass">
+                  Looks good!
+                </div>
+              </div> 
+            </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+    <!-- navbar -->
