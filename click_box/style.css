@@ -1,0 +1,40 @@
+.color_square {
+    width: 200px;
+    height: 200px;
+}
+
+#red {
+    background-color: red;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#green {
+    background-color: green;
+}
+
+body {
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+button {
+    border: none;
+    font-size: 25px;
+}
+#clear_game{
+    width: 43px;
+    height: 25px;
+    font-size: 15px;
+    margin: 17px;
+    text-align: center;
+}
