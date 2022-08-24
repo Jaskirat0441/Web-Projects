@@ -5,6 +5,7 @@
     width: 70vw;
     background-image: linear-gradient(to right, #6dace3 , #a7d0f3);
     padding: 6px 30px;
+    background-color: #a19d9d;
     border-radius:14px;
 
 }
@@ -13,4 +14,7 @@
 }
 label{
     font-weight: 600;
+}
+#login_form{
+    display: none;
 }
