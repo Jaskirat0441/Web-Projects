@@ -1,11 +1,11 @@
 .authentication-title {
-    background-color: #eee;
+    background-color: #d9d9d9;
 }
 .reg_form{
     width: 70vw;
-    background-image: linear-gradient(to right, #6dace3 , #a7d0f3);
+    background-image: linear-gradient(to right, #646566 , #c3c4c5);
     padding: 6px 30px;
-    background-color: #a19d9d;
+    /* background-color: #a19d9d; */
     border-radius:14px;
 
 }
@@ -17,4 +17,7 @@ label{
 }
 #login_form{
     display: none;
+}
+.email-data{
+    color: #ffffff;
 }

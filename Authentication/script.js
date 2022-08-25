@@ -14,6 +14,40 @@ document.getElementById('login-button').addEventListener('click', () => {
     login_form.style.display = "block";
 
 })
+
+// -------------password encryption-------------------------- //
+let encryptionRule = {
+	'A': 'N', 'B': 'O', 'C': 'P', 'D': 'Q',
+	'E': 'R', 'F': 'S', 'G': 'T', 'H': 'U',
+	'I': 'V', 'J': 'W', 'K': 'X', 'L': 'Y',
+	'M': 'Z', 'N': 'A', 'O': 'B', 'P': 'C',
+	'Q': 'D', 'R': 'E', 'S': 'F', 'T': 'G',
+	'U': 'H', 'V': 'I', 'W': 'J', 'X': 'K',
+	'Y': 'L', 'Z': 'M',
+	'a': 'n', 'b': 'o', 'c': 'p', 'd': 'q',
+	'e': 'r', 'f': 's', 'g': 't', 'h': 'u',
+	'i': 'v', 'j': 'w', 'k': 'x', 'l': 'y',
+	'm': 'z', 'n': 'a', 'o': 'b', 'p': 'c',
+	'q': 'd', 'r': 'e', 's': 'f', 't': 'g',
+	'u': 'h', 'v': 'i', 'w': 'j', 'x': 'k',
+	'y': 'l', 'z': 'm',
+	'0': '5', '1': '6', '2': '7', '3': '8',
+	'4': '9', '5': '0', '6': '1', '7': '2',
+	'8': '3', '9': '4',
+	'!': '#', '$': '%', '&': '+', '-': '@',
+	'_': '~', '#': '!', '%': '$', '+': '&',
+	'@': '-', '~': '_'
+  }
+  // console.log(encryptionRule);
+
+  const encrypt = (inputPassword) => {
+    let encryptedPassword = ''
+    for(char of inputPassword) {
+      encryptedPassword = encryptedPassword + encryptionRule[char]
+    }
+    return encryptedPassword
+  }
+
 // reset field
 
 const resetFields = () =>{
@@ -130,12 +164,59 @@ if(!error){
          firstname,
          lastname,
          email,
-         // password : encrypt(password),
+         password : encrypt(password),
          phone
      }
      
      DB_USERS.push(userDetails);
-     console.log(DB_USERS);
+    //  console.log(DB_USERS);
 }
 
 }
+
+
+// ---------------login form -------------//
+
+const resetLoginInputs  =()=>{
+  document.getElementById('login-email').value="";
+  document.getElementById('login-pass').value="";
+}
+const loginForm = () => {
+  let login_email = document.getElementById('login-email').value;
+  let login_pass = document.getElementById('login-pass').value;
+  //  console.log(login_email)
+  //  console.log(login_pass)
+
+  let login_succes_alert = document.getElementById('login-succes-alert');
+    let login_danger_alert = document.getElementById('login-danger-alert');
+   
+
+    let currentUser =  DB_USERS.find(user => user.email === login_email && user.password === login_pass)
+    if(currentUser) {
+		  login_succes_alert.style.display = 'block'
+		  login_danger_alert.style.display = 'none'
+
+      setTimeout(() => {
+        resetLoginInputs();
+      }, 1000);
+	  } else {
+		  login_danger_alert.style.display = 'block'
+		  login_succes_alert.style.display = 'none'
+	  }
+
+}
+
+
+// ---
+	// 	const toggle = document.getElementById('pass-eye'),
+  // 				password = document.getElementById('password'),
+	// 			icon = document.getElementById('eyeIcon');
+  //   	toggle.addEventListener("click", () => {
+	// 		if(password.type === "password"){
+	// 			password.type = 'text';
+	// 			icon.classList.add("fa-eye-slash")
+	// 		}else{
+	// 			password.type = 'password';
+	// 			icon.classList.remove("fa-eye-slash")
+	// 		}
+	// })
