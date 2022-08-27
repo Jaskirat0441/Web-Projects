@@ -26,7 +26,7 @@ const executeOrder = () => {
 
         setTimeout(() => {
             document.getElementById("alert_btn").style.display="none";
-        }, 1500);
+        }, 1000);
     }
 }
 
