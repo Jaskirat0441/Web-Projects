@@ -57,6 +57,10 @@ const resetFields = () =>{
     document.getElementById("phone").value="";
     document.getElementById("password").value="";
     document.getElementById("confirm_pass").value="";
+    // document.getElementsByName('gender').value="";
+    // document.querySelector('input[name="gender"]:checked').value=unchecked;
+    var radio = document.querySelector('input[type=radio][name=gender]:checked');
+    radio.checked = false;
     document.getElementById('tnC').checked = false
 
 }
@@ -67,6 +71,16 @@ const signup_form = () => {
   let phone = document.getElementById("phone").value;
   let password = document.getElementById("password").value;
   let confirm_pass = document.getElementById("confirm_pass").value;
+  //  let gender= document.getElementsByName('gender').value;
+  let gender= document.querySelector('input[type=radio][name=gender]:checked');
+  if(gender){
+    gender=gender.value;
+  }
+  else{
+    gender=null
+  }
+   console.log(gender);
+  
   let tnC = document.getElementById("tnC").checked;
 
   // validation
@@ -111,7 +125,14 @@ const signup_form = () => {
 
     // error = true
   }
-
+   if(gender){
+    document.getElementById("valid-gender").style.display = "block";
+    document.getElementById("invalid-gender").style.display = "none";
+  } else {
+    document.getElementById("invalid-gender").style.display = "block";
+    document.getElementById("valid-gender").style.display = "none";
+    error = true;
+   }
   if (phone && phone.length === 10 && parseInt(phone)) {
     document.getElementById("valid-phone").style.display = "block";
     document.getElementById("invalid-phone").style.display = "none";
@@ -165,11 +186,12 @@ if(!error){
          lastname,
          email,
          password : encrypt(password),
-         phone
+         phone,
+         gender
      }
      
      DB_USERS.push(userDetails);
-    //  console.log(DB_USERS);
+     console.log(DB_USERS);
 }
 
 }
@@ -204,8 +226,8 @@ const loginForm = () => {
 		  login_succes_alert.style.display = 'none'
 	  }
 
+    console.log(currentUser)
 }
-
 
 // ---
 	// 	const toggle = document.getElementById('pass-eye'),
